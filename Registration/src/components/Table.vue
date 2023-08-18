@@ -126,10 +126,6 @@ interface spatialData {
     lng: number,
     lat: number
 }
-// const timeDataDate = ref(new Date())
-// const timeDataHour = ref(0)
-// const timeDataMinute = ref(0)
-// const timeDataSecond = ref(0)
 
 const newTimeData = reactive<timeData>(
     {
@@ -146,7 +142,6 @@ const newSpatialData = reactive<spatialData>(
         lat: 0
     }
 )
-
 
 function uploadData() {
     if (newSpatialData.lng > 180.0 || newSpatialData.lng < -180.0 || newSpatialData.lat > 90.0 || newSpatialData.lat < -90.0)
