@@ -1,5 +1,6 @@
 <script setup>
 import Table from './components/Table.vue'
+import Property from './components/Property.vue'
 //import EUI from './components/EUI.vue'
 </script>
 
@@ -9,7 +10,8 @@ import Table from './components/Table.vue'
   </header>
 
   <main>
-    <Table />
+    <Property />
+    <!-- <Table /> -->
     <!-- <EUI /> -->
   </main>
 </template>
