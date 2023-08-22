@@ -8,10 +8,10 @@
     <button @click="uploadProperty">上传</button>
 </template>
 <script setup lang="ts">
-import { ref,reactive } from "vue"
+import { ref, reactive } from "vue"
 
-const propertyValueList:string[] = reactive([])
-let valueList:string[] = []
+const propertyValueList: string[] = reactive([])
+let valueList: string[] = []
 let propertySet = new Set<string>()
 let propertyMap = new Map()
 const propertyInput = ref("")
@@ -35,9 +35,9 @@ function SetPropertyMap(propertyMap: Map<string, string>, propertySet: Set<strin
 }
 
 function createProperty() {
-    if(propertyInput.value.trim() && valueInput.value.trim()) {
-        const pair:string = `${propertyInput.value}：${valueInput.value}`
-        if(!propertySet.has(propertyInput.value)) {
+    if (propertyInput.value.trim() && valueInput.value.trim()) {
+        const pair: string = `${propertyInput.value}：${valueInput.value}`
+        if (!propertySet.has(propertyInput.value)) {
             propertySet.add(propertyInput.value)
             valueList.push(valueInput.value)
             propertyValueList.push(pair)
@@ -48,7 +48,7 @@ function createProperty() {
 }
 
 function uploadProperty() {
-    SetPropertyMap(propertyMap,propertySet,valueList)
+    SetPropertyMap(propertyMap, propertySet, valueList)
     propertyValueList.splice(0)
     valueList.splice(0)
     propertySet.clear()
@@ -60,17 +60,17 @@ function uploadProperty() {
 </script>
 <style>
 input {
-  display: block;
-  margin-bottom: 10px;
+    display: block;
+    margin-bottom: 10px;
 }
 
 select {
-  float: left;
-  margin: 0 1em 1em 0;
-  width: 14em;
+    float: left;
+    margin: 0 1em 1em 0;
+    width: 14em;
 }
 
 .buttons {
-  clear: both;
+    clear: both;
 }
 </style>
