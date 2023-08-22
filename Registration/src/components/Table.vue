@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { reactive, ref } from 'vue'
 
+let _jsonData = {}
 const startDate: number = 9000000000
-
 const hourList: number[] = Array.from(new Array(24).keys())
 const minuteList: number[] = Array.from(new Array(60).keys())
 const secondList: number[] = Array.from(new Array(60).keys())
@@ -159,7 +159,7 @@ function uploadData() {
         newSpatialData.lng = 0
         newSpatialData.lat = 0
         alert("提交成功")
-        console.log({ jsonData })
+        _jsonData = jsonData
     }
 }
 
